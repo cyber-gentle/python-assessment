@@ -427,7 +427,4 @@ Resource(s) with the most units borrowed:
 * **Primary Limitation — In-Memory Storage / Lack of Data Persistence:**
   * All program state (`self.resources`, `self.fellows`, and `self.borrow_records`) exists exclusively in transient Python memory during script execution.
   * Once the program terminates or the CLI exits, all newly created resources, borrow histories, and inventory adjustments are permanently lost, resetting the system back to the initial default state. To make this production-ready, data must be persisted to a relational database (e.g., SQLite/PostgreSQL) or flat files (e.g., JSON/CSV).
-* **Additional Limitations:**
-  * **Static Fellows:** Fellow accounts cannot be created or edited via the application interface.
-  * **$O(n)$ Search Complexity:** Items and borrow logs use sequential lists requiring full linear scans for lookups instead of indexed key-value lookups.
-  * **No Timestamps / Due Dates:** Records lack transaction timestamps or return deadlines, preventing tracking of overdue assets.
+
